@@ -1,0 +1,30 @@
+[System]
+Name='FIS2'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Distance(m)'
+Range=[0 100]
+NumMFs=3
+MF1='Close':'trapmf',[-36 -4 10 50]
+MF2='Medium':'trimf',[0 50 100]
+MF3='Far':'trapmf',[50 90 104 136]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'constant',[0]
+MF2='mf2':'constant',[0.5]
+MF3='mf3':'constant',[1]
+
+[Rules]
